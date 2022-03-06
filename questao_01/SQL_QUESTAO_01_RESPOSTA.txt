@@ -1,0 +1,6 @@
+-- RELÁTORIO DAS TABELAS--
+SELECT nome_cliente, cpf_cliente, rg_cliente, telmask_cliente, email_cliente, sel_status_compra, ordem_foto
+FROM clientes clientes
+JOIN compras compras ON clientes.id_cliente = compras.fk_id_cliente_clientes 
+JOIN clientes_fotos fotos ON clientes.id_cliente = fotos.fk_id_cliente_clientes
+WHERE fotos.ordem_foto = 1 and clientes.sel_status_compra = 'concluido';
